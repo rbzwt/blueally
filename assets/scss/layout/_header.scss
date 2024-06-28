@@ -1,0 +1,239 @@
+/*--- header ---*/
+.main-header {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	background-color: transparent;
+	z-index: 999;
+	padding: rem(33px) 0;
+	transition: 0.3s;
+	&.stuck {
+		padding: rem(20px) 0;
+		background-color: $primary-200;
+		.search-input {
+			background-color: $primary-100;
+		}
+	}
+	@include respond-below(lg) {
+		padding: rem(20px) 0;
+	}
+	.container {
+		max-width: rem(1260px);
+	}
+	a {
+		color: $white;
+		font-size: rem(14px);
+		margin: 0 rem(12px);
+		&:hover {
+			color: $secondary-100;
+			text-decoration: underline;
+		}
+	}
+	.mh {
+		&-top-nav {
+			@include respond-below(lg) {
+				display: none;
+			}
+		}
+		&-navbar {
+			margin-top: rem(-16px);	
+			@include respond-below(xl) {
+			margin-top: rem(-5px);					
+			}
+			@include respond-below(lg) {
+				align-items: center;
+			}
+			.hamburger{
+				margin: 0;
+			}
+		}
+		&-search {
+			button {
+				font-size: rem(16px);
+				color: $white;
+				border: 0;
+				background-color: transparent;
+				transition: 0.3s;
+				&:hover {
+					color: $secondary-100;
+				}
+			}
+		}
+		&-btn {
+			a {
+				padding: rem(8px) rem(20px);
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.brand {
+		display: inline-flex;
+		vertical-align: middle;
+		width: rem(224px);
+		@include respond-below(lg) {
+			width: rem(92px);
+		}
+	}
+
+	/* nav */
+	.navigation {
+		word-break: keep-all;
+		@include flex-center;
+		@include respond-below(lg) {
+			display: none;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				&:hover {
+					a {
+						color: $white;
+						text-decoration: none;	
+						&::after { 
+							width: 100%;
+							left: 0;					
+						}
+					}
+				}
+				a {
+					position: relative;
+					font-weight: 700;
+					margin:0 rem(16px);
+					&::after {
+						content: "";
+						position: absolute;
+						top: 100%;
+						right: 0;
+						width: 0;
+						height: 3px;
+						background-color: $secondary-100;
+						transition: 0.3s;
+					}				
+					@include respond-below(xl) {
+						font-size: rem(12px);
+						margin:0 rem(12px);
+					}
+				}
+				.sub-menu {
+					position: absolute;
+					top: calc(100% + 1px);
+					left: 0;
+					min-width: rem(228px);
+					background-color: $primary-200;
+					border-radius: 0 0 rem(10px) rem(10px);
+					transition: 0.3s;
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+					overflow: hidden;
+					ul {						
+						li {
+							position: relative;	
+							padding: rem(10px) 0;
+							&:hover {
+								&::before {
+									opacity: 1;
+									visibility: visible;
+								}
+							}
+							&::before {
+								content: "";
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								background-color: $secondary-200;
+								mix-blend-mode: soft-light;
+								opacity: 0;
+								visibility: hidden;
+								transition: 0.3s;
+							}
+						}
+						a {
+							&::after {
+								display: none;
+							}
+						}
+					}
+				}
+				&:hover {
+					.sub-menu {
+						opacity: 1;
+						visibility: visible;
+						pointer-events: all;
+					}
+				}
+			}
+		}
+	}
+	.search-input {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		padding: rem(20px) rem(10px);
+		background-color: $primary-200;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: 0.3s;
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;		
+		}
+		.search-wrap {
+			position: relative;
+			button {
+				position: absolute;
+				top: 50%;
+				right: rem(10px);
+				transform: translateY(-50%);
+				border: 0;
+				background-color: transparent;
+				color: $secondary-100;
+				font-size: rem(16px);
+				transition: 0.3s;
+				&:hover {
+					color: $black;
+				}
+				&::before {
+					display: block;
+				}
+			}
+			i {
+				position: absolute;
+				top: 50%;
+				right: rem(-45px);
+				font-size: rem(25px);
+				color: $secondary-100;
+				transform: translateY(-50%);
+				cursor: pointer;
+				&:hover {
+					color: $white;
+				}
+				&::before {
+					display: block;
+				}
+			}
+			input[type="search"] {
+				border-color: transparent;
+				border-radius: rem(5px);
+				background-color: $white;
+				&::placeholder {
+					color: $black;
+				}
+			}
+		}
+	}
+}

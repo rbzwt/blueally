@@ -1,0 +1,30 @@
+.assessment-solutions {
+  padding: rem(50px) 0;
+  background-color: rgba(204, 204, 210, 0.25);
+}
+
+.assessment-solutions .as-heading {
+  max-width: rem(373px);
+  width: 100%;
+  margin-bottom: rem(44px);
+}
+
+.assessment-solutions .as-data {
+  margin-bottom: rem(51px);
+}
+
+.assessment-solutions .as-content {
+  padding-left: rem(50px);
+}
+
+.assessment-solutions .as-title {
+  position: relative;
+}
+
+.assessment-solutions .as-title i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: rem(24px);
+  transform: translateY(-50%);
+}

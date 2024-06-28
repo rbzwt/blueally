@@ -1,0 +1,98 @@
+%btn {
+	display: inline-block;
+	vertical-align: top;
+	padding: rem(17px) rem(35px);
+	color: $white;
+	font-size: $font-size-base;
+	font-weight: 700;
+	line-height: 1.25;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: rem(5px); 
+	background-color: $primary-100;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
+
+	&:is(:hover, :focus),
+	a:hover & {
+		color: $primary-100 !important;
+		text-decoration: none;
+		background-color: $secondary-200 !important;
+		cursor: pointer;
+		border-color: $secondary-200 !important;
+	}
+}
+
+.btn {
+	@extend %btn;
+
+	&.-primary {
+		padding: rem(16px) rem(34px);
+		background-color: transparent;
+		color: $white;
+		border: 1px solid $secondary-100;
+	}
+	&.-secondary {
+		background-color: $white;
+		color: $primary-100;
+	}
+	&-link {
+			position: relative;
+			margin-bottom: rem(2px);
+			color: $primary-100;
+			font-size: $font-size-base;
+			font-weight: 700;
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
+	
+			&::after {
+				@include icon("i");
+				position: absolute;
+				top: 10%;
+				right: rem(-18px);
+				font-size: rem(12px);
+				color: $primary-100;
+			}
+			&:hover,
+			&:focus,
+			a:hover & {
+				color: $primary-100;
+				text-decoration: none;
+				border-color: $primary-100;
+				&:after {
+					transition: 0.3s;
+					color: $secondary-100;
+					}
+			}
+		}
+}
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@extend %btn;
+	-webkit-appearance: button;
+}
+input[type="submit"] {
+	border: 1px solid $secondary-100;
+	border-radius: rem(5px);
+}
+.play-icon {
+	position: relative;
+	@include flex-center;
+	height: rem(70px);
+	width: rem(70px);
+	border: 1px solid $primary-100;
+	border-radius: 100vh;
+	cursor: pointer;
+	&:hover {
+		&::after { 
+			color: $secondary-100;	
+		}
+	}
+	&::after {
+		@include icon("o");
+		position: absolute;
+		color: $primary-100;			
+	}
+}

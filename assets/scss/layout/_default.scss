@@ -1,0 +1,132 @@
+// css for WP-Admin
+#wpadminbar {
+	position: fixed;
+}
+
+.wrapper {
+	position: relative;
+	// display: grid;
+	// grid-template: 1fr auto / 1fr;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.main-container {
+	width: 100%;
+	align-self: start;
+}
+
+.slick-dots {
+	li {
+		padding: 0 rem(5px);
+	}
+}
+//  paragraph styling
+.p-lg {
+	p {
+		font-size: rem(18px);
+	}
+} 
+.p-sm {
+	p {
+		font-size: rem(14px);
+	}
+}
+h5 {
+	font-weight: 600;
+}
+
+// BG STyling 
+
+.bg-dark {
+	background-color: $primary-200;
+	p {
+		color: $white;
+	}
+	a {
+		&:not(.btn) {
+			color: $white;
+			&:hover {
+				color: $secondary-100;
+			}
+		}
+	}
+	@include hgroup {
+		color: $white;
+	}
+	.btn-link {
+		&::after {
+			color: $white;
+		}
+		&:hover {
+			color: $white !important;
+			text-decoration: underline;
+			&::after {
+				color: $secondary-100;
+			}
+		}
+	}
+	.play-icon {
+		border-color: $white;
+		&:hover {
+			&::after { 
+				color: $secondary-100;	
+			}
+		}
+		&::after { 
+			color: $white;	
+		}
+	}
+	.test {
+		margin-top: rem(40px);
+		padding-left:rem(50px) ;
+	}
+}
+
+//form styling 
+.form-wrap {
+	background-color: $primary-100;
+	padding: rem(40px);
+}
+
+//verticle line
+.v-line {
+	position: relative;
+	&::before {
+		content: " ";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: rem(71px);
+		height: 100%;
+		background-color: transparent;
+		border-right: 1px solid $color-100;
+		@include respond-below(xxl) {
+			width: rem(13px);
+		}
+	}
+}
+.highlighter::before {
+	content: "";
+	position: absolute;
+	left: rem(67px);
+	width: rem(6px);
+	height: rem(68px);
+	background-color: $secondary-100;
+	@include respond-below(xxl) {
+		left: rem(9px);
+	}
+}
+//swiper controls button
+.swiper-controls {
+	.arrows-btn {
+		border: 0;
+		background-color: transparent;
+		font-size: rem(28px);
+		color: $secondary-100;
+	}
+}

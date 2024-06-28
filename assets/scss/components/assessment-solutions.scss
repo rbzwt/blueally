@@ -1,0 +1,105 @@
+.assessment-solutions {
+    padding: rem(50px) 0;
+    background-color: rgba($color-100, 0.25);
+    &.v-line {
+        &::before {
+            background-color: $white;
+        }
+    }
+    .as {
+        &-heading {
+            max-width: rem(373px);
+            width: 100%;
+            margin-bottom: rem(44px);
+            @include respond-below(md){
+                margin-bottom: rem(20px);
+            }
+            h2 {
+                @include respond-below(md){
+                    font-size: rem(29px);
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-data {
+            margin-bottom: rem(51px);
+            @include respond-below(md){
+                margin-bottom: rem(15px);
+                h5 {
+                    font-size: rem(20px);
+                }
+                p {
+                    font-size: rem(16px);
+                }
+            }
+        }
+        &-content {
+            padding-left: rem(50px);
+            margin-top: rem(25px);
+            @include respond-below(lg){
+                padding-left:0 ;
+                margin-top:0;
+            }
+        }
+        &-accordian-wrap {
+            max-width: rem(470px);
+            width: 100%;
+            margin-left: auto;
+            @include respond-below(lg) {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+        &-accordian-heading {
+            position: relative;
+            text-align: left;
+            padding-left: 0;
+            background-color: transparent;
+            border: 0;
+            width: 100%;
+            margin: rem(19px) 0;
+           h5 {
+               margin-bottom: 0;
+               padding-right: rem(20px);
+            }
+            i {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                font-size: rem(24px);
+                color: $secondary-100;
+                transform: translateY(-50%);
+                transition: 0.3s;
+                &:hover {
+                    color: $primary-100;
+                }
+                &::before {
+                    display: block;
+                }
+            }     
+        }
+        &-accordian-item {
+            @include respond-below(md) {
+                transition: 0.3s;
+                opacity:0.5
+            }
+            
+            border-bottom: 1px solid rgba($primary-100, 0.2);
+            &.active {
+                opacity: 1;
+                .as-accordian-heading {
+                    i {
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+                }
+            }
+        }
+        &-accordian-data {
+            display: none;
+            margin-bottom: rem(20px);
+        }
+        &-link {
+            margin-bottom: rem(50px);
+        }
+    }
+}

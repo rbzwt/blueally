@@ -1,0 +1,99 @@
+.use-case {
+    padding: rem(50px) 0 rem(100px);
+    .swiper-container {
+        overflow: hidden;
+    }
+    .uc {
+        &-info {
+            margin-bottom: rem(12px);
+            p{
+                color: $primary-100;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+        }
+        &-heading {
+            margin-bottom: rem(13px);
+            &:first-child {
+                margin-right: rem(40px);
+            }
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+        &-right {
+            .swiper-controls {
+                @include respond-below(lg) {
+                    display: none;
+                }
+            }
+        }
+        &-main-wrap {
+            margin-bottom: rem(13px);
+        }
+        &-content {
+            max-width: rem(773px);
+            width: 100%;
+        }
+        &-content-desc {
+            margin-bottom: rem(60px);
+            @include respond-below(lg) {
+                margin-bottom: rem(45px);   
+            }
+            p {
+                @include respond-below(lg) {
+                    font-size: rem(14px);
+                }
+            }
+        }
+        &-border {
+            padding-bottom: rem(5px);
+            border-bottom: 1px solid $color-200;
+        }
+        &-review {
+            h3 {
+                font-weight: 700;
+                color: $secondary-100;
+            }
+        }
+        &-swiper-wrap {
+            @include respond-below(lg) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+        }
+        &-stats-row {
+            @include row-space(24px);
+        }  
+        &-image-wrap {
+            max-width: rem(290px);
+            width: 100%;
+            @include respond-below(lg) {
+                display: none;
+                max-width: 100%;
+            }
+        }
+        &-image-inner {
+            position: relative;
+            padding-top: aspect-ratio(290, 366);
+            width: 100%;
+            border-radius: rem(10px);
+            overflow: hidden;
+            @include imgFit;
+            @include respond-below(lg){
+                padding-top: 66.2069%;
+            }
+        }
+        &-image-mobile {
+            display: none;
+            @include respond-below(lg) {
+                display: block;
+                margin-bottom: rem(50px);
+            }           
+        }
+        &-mobile-controls {
+            display: none;
+            text-align: center;
+        }
+    }
+}

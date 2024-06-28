@@ -1,0 +1,219 @@
+/*--- footer ---*/
+.main-footer {
+	position: relative;
+	padding: rem(30px) 0;
+	width: 100%;
+	height: auto;
+	align-self: end;
+	line-height: normal;
+	.mf {
+		&-back-wrap {
+			position: absolute;
+			top: rem(20px);
+			left: rem(22px);
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			@include respond-below(md) {
+				left: rem(30px);
+			}
+			i {
+				color: $secondary-200;
+				font-size: rem(19px);
+				&::before {
+					display: block;
+				}
+			}
+			span {
+				color: $secondary-200;
+				font-size: rem(18px);
+				margin-left: rem(15px);
+			}
+		}
+		&-main-wrapper {
+			border-bottom: 1px solid rgba($color: #d6d6da, $alpha: 0.30);
+			padding: rem(50px) 0 rem(35px);
+			@include respond-below(md) {
+			padding: rem(30px) 0 rem(35px);		
+			border-bottom: none;
+			}
+		}
+		&-main {
+			display: grid;
+			grid-template-columns: repeat(5,auto);
+			gap: rem(16px);
+			justify-content: space-between;
+			@include respond-below(lg) {
+				grid-template-columns: repeat(4,auto);
+			}
+			@include respond-below(md) {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		&-menu {
+			max-width: rem(215px);
+			@include respond-below(md) {
+				max-width: 100%;
+			}
+			ul {
+				padding: 0;
+				margin: 0;
+				@include respond-below(md) {
+					border-bottom: 1px solid $white;
+				}
+			}
+			li {
+				padding-top:rem(5px);
+				padding-bottom:rem(5px);
+			}
+		}
+		&-light {
+			font-weight: 400;
+			@include respond-below(md) {
+				display: none;
+			}
+		}
+		&-heading {
+			display: flex;
+			align-items: center;
+			i {
+				font-size:rem(22px);
+				color: $white;
+				margin-right: rem(8px);
+				cursor: pointer;
+				&:hover {
+					&::before {
+						color: $secondary-100;
+					}
+				}
+				&::before {
+					display: block;
+				}
+			}
+			li {
+				font-size: rem(18px);
+				font-weight: 500;
+			}
+		}
+		&-logo-group {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			margin-top: rem(-140px);
+			@include respond-below(lg){
+				margin-top: rem(-90px);	
+			}
+			@include respond-below(md){
+				margin-top: 0;	
+				align-items: center;
+			}
+			.footer-logo {
+				width: rem(135px);
+				margin-bottom: rem(44px);
+				@include respond-below(md){
+					margin-top: rem(30px);	
+					margin-bottom: rem(30px);		
+				}
+			}
+		}
+		&-social {
+			padding-top: rem(40px);
+			@include respond-below(md){
+				padding-top:0;
+			}
+			.row {
+				justify-content: center;
+			}
+		}
+		&-icon {
+			display: flex;
+			justify-content: center;
+			color: $white;
+			@include respond-below(md) {
+				margin-bottom: rem(20px);
+			}
+			i {
+				font-size: rem(20px);
+				cursor: pointer;
+				transition: 0.3s;
+				&:not(:first-child) {
+					margin-left: rem(24px);
+				}
+				&:hover {
+					color: $secondary-100;
+				}
+				&::before {
+					display: block;
+				}
+			}
+		}
+		&-policy {
+			font-size: rem(10px);
+			font-weight: 400;
+			@include respond-below(xl){
+				justify-content: center;
+			}
+			@include respond-below(md) {
+				margin-bottom: rem(20px);
+			}
+		}
+		&-policy-link {
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				padding: 0;
+				@include respond-below(xl){
+					&:last-child {
+						&::after {
+							display: none;
+						}		
+					}
+				}
+				&::after {
+					content: "|";
+					display: inline-block;
+					color: $white;
+					margin: 0 rem(10px);
+					vertical-align: middle;
+				}
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+		&-policy-link-heading  {
+			p {
+				margin-bottom: 0;
+			}
+		}
+		&-contact {
+			display: flex;
+			justify-content: flex-end;
+			@include respond-below(md) {
+				justify-content: center;
+			}
+			i {
+				color: $secondary-100;
+				font-size: rem(16px);
+				margin-right: rem(5px);
+				cursor: pointer;
+				&:hover {
+					color: $white;
+				}
+				&::after {
+					display: block;
+				}
+			}
+			a {
+				font-size: rem(14px);
+				@include respond-below(md) {
+					color: $secondary-100;
+				}
+			}
+		}
+	}
+}

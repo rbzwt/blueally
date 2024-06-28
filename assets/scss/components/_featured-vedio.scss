@@ -1,0 +1,83 @@
+.featured-vedio {
+    padding: rem(100px) 0 rem(50px);
+    @include respond-below(md) {
+        padding-top: rem(70px);
+     }
+    .fv {
+        &-data {
+            h2 {
+                font-weight: 600;
+                @include respond-below(md) {
+                    font-size: rem(29px);
+                 }
+            }
+            h5 {
+                @include respond-below(md) {
+                    font-size: rem(18px);
+                 }
+            }
+        }
+        &-image-wrap {
+            max-width: rem(412px);
+            width: 100%;
+            margin-left: auto;
+            @include respond-below(md) {
+                margin:0 auto rem(50px);
+             }
+        }
+
+        &-image {
+            position: relative;
+            padding-top: aspect-ratio(412, 370);
+            @include imgFit;
+            a {
+                img {
+                    transition: 0.3s;
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+            }
+        }
+        &-image-inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-mask-image: image('brand-mask.svg');
+            mask-image: image('brand-mask.svg');
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: 100%;
+            mask-size: 100%;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $primary-100;
+                mix-blend-mode: overlay;
+                z-index: 1;
+            }
+        }
+        &-main {
+            @include respond-below(md) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
