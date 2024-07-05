@@ -1,0 +1,128 @@
+.case-studies {
+    padding: rem(65px) 0;
+
+    @include respond-below(md) {
+        background-color: $primary-100;
+        padding: rem(40px) 0;
+    }
+
+    &::before {
+        background-color: $white;
+    }
+
+    .cs {
+        &-heading {
+            a {
+                @include respond-below(md) {
+                    display: none;
+                }
+            }
+        }
+
+        &-mobile-para {
+            display: none;
+
+            @include respond-below(md) {
+                display: block;
+                margin-bottom: rem(25px);
+            }
+        }
+
+        &-top {
+            margin-bottom: rem(25px);
+        }
+
+        &-main-wrap {
+            width: 100%;
+            background-color: $white;
+            border-radius: rem(10px);
+
+            h5 {
+                color: $primary-100;
+                @include respond-below(md) {
+                    font-size: rem(20px);
+                }
+            }
+
+            p {
+                color: $primary-400;
+                @include respond-below(md) {
+                    font-size: rem(14px);
+                }
+            }
+        }
+
+        &-image-item {
+            position: relative;
+            padding-top: aspect-ratio(364, 136);
+            border-radius: rem(10px) rem(10px) 0 0;
+            @include imgFit;
+            overflow: hidden;
+
+            img {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -35%) scale(2.5);
+                object-fit: contain;
+                pointer-events: none;
+            }
+
+            &.gray {
+                background-color: $secondary-200;
+            }
+
+            &.green {
+                background-color: $color-500;
+            }
+
+            &.blue {
+                background-color: $secondary-100;
+            }
+        }
+
+        &-link {
+            .btn-link {
+                color: $primary-100 !important;
+
+                &:hover {
+                    text-decoration: none;
+
+                    &::after {
+                        color: $secondary-100;
+                    }
+                }
+
+                &::after {
+                    color: $primary-100;
+                }
+            }
+        }
+
+        &-content-wrap {
+            display: flex;
+            flex-direction: column;
+            padding: rem(24px);
+        }
+
+        &-content {
+            margin-bottom: rem(50px);
+        }
+    }
+
+    .swiper-container {
+        overflow: hidden;
+        @include respond-below(md) {
+            margin-right: rem(-30px);
+        }
+        .row {
+            @include row-space(0px);
+        }
+    }
+    .swiper-controls {
+        .arrows-btn {
+            &:hover {
+                color: $secondary-100;
+            }
+        }
+    }
+}

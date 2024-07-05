@@ -1,0 +1,61 @@
+.two-column-cta {
+    .tc {
+        &-left {
+            position: relative;
+            padding: rem(40px) 0;
+            &::before {
+                content: " ";
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100vw;
+                height: 100%;
+                background-color: $primary-100;
+                background-size: cover;
+                z-index: -1;
+                @include respond-below(md) {
+                    right: rem(-35px);
+                }
+            }
+        }
+        &-right {
+            padding: rem(40px) 0 rem(40px) rem(75px);
+        }
+        &-lead {
+            margin-bottom: rem(20px);
+            p {
+                font-size: rem(20px);
+                @include respond-below(md) {
+                    font-size: rem(16px)
+                }
+            }
+            h2 {
+                @include respond-below(md) {
+                    font-size: rem(28px)
+                }
+            }
+        }
+        &-content {
+            margin-bottom: rem(20px);
+            h2, p {
+                color: $white;
+            }
+            p {
+                font-size: rem(20px);
+                @include respond-below(md) {
+                    font-size: rem(16px)
+                }
+            }
+            h2 {
+                @include respond-below(md) {
+                    font-size: rem(28px)
+                }
+            }
+        } 
+    }
+    .row {
+        @include respond-below(md) {
+            @include row-space(0px);
+        }
+    }
+}

@@ -4,6 +4,7 @@
     justify-content: center;
     position: relative;
     min-height: 100vh;
+    width: 100%;
     @include respond-below(md){
         min-height: auto;
     }
@@ -74,6 +75,23 @@
                 }
                 @include respond-below(md){
                      font-size: rem(14px);
+                }
+            }
+        }
+    }
+    &.about-hero {
+        min-height: auto;
+        padding: rem(272px) 0 rem(183px);
+        .hs {
+            &-bg {
+                @include respond-below(md) {
+                    transform: scaleX(1);
+                }
+            }
+            &-content {
+                display: block;
+                h1 {
+                    color: $white;
                 }
             }
         }

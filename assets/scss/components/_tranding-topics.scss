@@ -1,0 +1,95 @@
+.tranding-topics {
+    padding: rem(100px) 0;
+    @include respond-below(md) {
+        padding: rem(50px) 0;  
+    }
+    .tt {
+        &-item-wrap{
+            max-width: rem(526px);
+            width: 100%;
+            @include respond-below(lg) {
+                max-width: rem(352px);
+            }
+            @include respond-below(md) {
+                max-width: 100%;
+            }
+        }
+        &-top {
+            margin-bottom: rem(35px);
+            @include respond-below(md) {
+                display: flex;
+                justify-content: space-between;
+            }
+            h2 {
+                @include respond-below(md) {
+                    font-size: rem(18px);
+                }
+            }
+        }
+        &-image {
+            max-width: rem(525px);
+            width: 100%;
+            @include respond-below(md) {
+                max-width: 100%;
+            }
+        }
+        &-image-item {
+            position: relative;
+            padding-top: aspect-ratio(525, 350);
+            @include imgFit;
+            img {
+                width: 100%;
+                height: 100%;           
+                border-top-right-radius: rem(820px);
+             }
+        }
+        &-content {
+            margin-bottom: rem(8px);
+        }
+        &-content-wrap {
+            border-radius: 0px 0px rem(10px) rem(10px);
+            background: $white;
+            box-shadow: 0px rem(3px) rem(18px) rgba($primary-100, 0.16);
+            padding: rem(27px) rem(20px) rem(27px) rem(30px);
+            h3 {
+                @include respond-below(lg) {
+                    font-size: rem(24px);
+                } 
+            }
+        }
+        &-bottom {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: rem(45px);
+                height: 1px;
+                background-color: $color-400;
+            }
+        }
+        &-slide-wrapper {
+            margin: rem(25px) 0;
+            h6 {
+                font-size: rem(14px);
+            }
+        }
+        &-annoucement-wrap {
+            max-width: rem(467px);
+            margin-left: auto;
+            @include respond-below(md) {
+                max-width: 100%;
+                margin-top: rem(32px);
+            }
+        }
+        &-heading {
+            h5 {
+                font-size: rem(18px);
+            }
+        }
+    }
+    .swiper-container {
+        overflow: hidden;
+    }
+}

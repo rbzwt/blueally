@@ -1,12 +1,18 @@
 var $ = jQuery.noConflict();
 var mainHeader = $('.main-header');
 const useCaseSlider = document.querySelectorAll('.use-case .use-case-slider');
+const featuredPartners = document.querySelectorAll('.featured-partners .fp-slider');
+const trendingTopics = document.querySelectorAll('.tranding-topics .tt-slider');
+const casestudieSlider = document.querySelectorAll('.cs-slider');
+const whoweSlider = document.querySelectorAll('.ww-slider');
+
 
 /* Script on ready
 ------------------------------------------------------------------------------*/
 $(() => {
 	/* Do jQuery stuff when DOM is ready */
 	Fancybox.bind("[data-fancybox]");
+	  
 	//onscroll header color
 	if ($(window).scrollTop() < 1) {
 		mainHeader.removeClass('stuck');
@@ -61,78 +67,141 @@ $(() => {
 	});
 	//end accordian
 
-	//swiper slider
+	//swiper slider for use-case
 	if (useCaseSlider) {
 		useCaseSlider.forEach((slider, index) => {
 			const swiperInstance = new Swiper(slider, {
 				slidesPerView: 1,
 				spaceBetween: 50,
-
+				loop:true,
 				navigation: {
-					prevEl: slider.parentNode.querySelector('.prev-btn'),
-					nextEl: slider.parentNode.querySelector('.next-btn'),
+					prevEl: slider.parentNode.querySelector('.uc-mobile-controls .prev-btn'),
+					nextEl: slider.parentNode.querySelector('.uc-mobile-controls .next-btn'),
 				},
-				// pagination: {
-				// 	el: slider.parentNode.querySelector('.swiper-pagination'),
-				// 	clickable: true,
-				// },
-				// breakpoints: {
-				// 	576: {
-				// 		slidesPerView: 2.2,
-				// 	},
-				// 	767: {
-				// 		slidesPerView: 2.5,
-				// 	},
-				// 	992: {
-				// 		slidesPerView: 3.5,
-				// 	},
-				// 	1200: {
-				// 		slidesPerView: 4.3,
-				// 	},
-				// 	1500: {
-				// 		slidesPerView: 4.5,
-				// 	},
-				// }
+				breakpoints: {
+                    991: {
+                        navigation: {
+                            nextEl: slider.parentNode.querySelector('.uc-desktop-controls .prev-btn'),
+                            prevEl: slider.parentNode.querySelector('.uc-desktop-controls .next-btn'),
+                        },
+                    }
+                }
 			});
 		});
 	}
 
+	// end use-case swiper slider
+	
+	//start featured-partners swiper slider
+	if (featuredPartners) {
+		featuredPartners.forEach((slider, index) => {
+			const swiperInstance = new Swiper(slider, {
+				slidesPerView: 2,
+				spaceBetween: 100,
+				adaptiveHeight : true,
+				// slidesPerView: 'auto',
+				loop:true,
+				navigation: {
+					prevEl: slider.parentNode.querySelector('.fp-controls .prev-btn'),
+					nextEl: slider.parentNode.querySelector('.fp-controls .next-btn'),
+				},
+				breakpoints: {
+                    767: {
+                        slidesPerView: 3,
+                    },
+					992: {
+						slidesPerView: 5,
+					},
+                }
+			});
+		});
+	}
+	//end featured-partners swiper slider
 
-	if (useCaseSlider) {
-		useCaseSlider.forEach((slider, index) => {
+	//start trending-topics slider	
+	if (trendingTopics) {
+		trendingTopics.forEach((slider, index) => {
 			const swiperInstance = new Swiper(slider, {
 				slidesPerView: 1,
-				spaceBetween: 50,
-
+				spaceBetween: 100,
+				loop:true,
 				navigation: {
-					prevEl: slider.parentNode.parentNode.querySelector('prev-mob-btn'),
-					nextEl: slider.parentNode.parentNode.querySelector('next-mob-btn'),
+					prevEl: slider.parentNode.querySelector('.tt-controls .prev-btn'),
+					nextEl: slider.parentNode.querySelector('.tt-controls .next-btn'),
 				},
-				// pagination: {
-				// 	el: slider.parentNode.querySelector('.swiper-pagination'),
-				// 	clickable: true,
-				// },
-				// breakpoints: {
-				// 	576: {
-				// 		slidesPerView: 2.2,
-				// 	},
-				// 	767: {
-				// 		slidesPerView: 2.5,
-				// 	},
-				// 	992: {
-				// 		slidesPerView: 3.5,
-				// 	},
-				// 	1200: {
-				// 		slidesPerView: 4.3,
-				// 	},
-				// 	1500: {
-				// 		slidesPerView: 4.5,
-				// 	},
-				// }
+			});
+		});
+	}
+	//end trending-topics slider 
+
+	//start case-studies slider section
+	if (casestudieSlider) {
+		casestudieSlider.forEach((slider, index) => {
+			const swiperInstance = new Swiper(slider, {
+				slidesPerView: 1.2,
+				spaceBetween: 32,
+				loop:true,
+				navigation: {
+					prevEl: slider.parentNode.parentNode.querySelector('.cs-controls .prev-btn'),
+					nextEl: slider.parentNode.parentNode.querySelector('.cs-controls .next-btn'),
+				},
+				breakpoints: {
+                    767: {
+                        slidesPerView: 2,
+                    },
+					992: {
+						slidesPerView: 3,
+					},
+                }
+			});
+		});
+	}
+	//end case-studies slider section
+
+	$(".form-wrap .cf-form-control input, .form-wrap .cf-form-control textarea").focus(function () {
+		$(this).parent().addClass('focused');
+	});
+	$(".form-wrap .cf-form-control input, .form-wrap .cf-form-control textarea").blur(function () {
+		var txtName = $(this).val();
+		if (txtName) {
+			$(this).parent().addClass('focused blured');
+		} else {
+			$(this).parent().removeClass('focused blured');
+		}
+	});
+
+
+
+	// start about who-we-are swiper
+	if (whoweSlider) {
+		whoweSlider.forEach((slider, index) => {
+			const swiperInstance = new Swiper(slider, {
+				slidesPerView: 1,
+				spaceBetween: 30,
+
+				// loop:true,
+				navigation: {
+					prevEl: slider.parentNode.querySelector('.swiper-controls .prev-btn'),
+					nextEl: slider.parentNode.querySelector('.swiper-controls .next-btn'),
+				},
+				pagination: {
+					el: slider.parentNode.querySelector('.custom-dt'),
+					clickable: true,
+				},
+				breakpoints: {
+                    767: {
+                        slidesPerView: 2,
+						spaceBetween:50,
+                    },
+					992: {
+						slidesPerView: 3,
+					},
+                }
 			});
 		});
 	}
 
+	// start about who-we-are swiper
 
 });
 

@@ -1,5 +1,8 @@
 .use-case {
     padding: rem(50px) 0 rem(100px);
+    @include respond-below(lg) {
+         padding-bottom: rem(70px);
+    }
     .swiper-container {
         overflow: hidden;
     }
@@ -21,11 +24,27 @@
                 margin-bottom: 0;
             }
         }
+        &-left {
+            @include respond-below(lg) {
+                width: 100%;
+            }
+        }
         &-right {
             .swiper-controls {
                 @include respond-below(lg) {
                     display: none;
                 }
+            }
+        }
+        &-view {            
+                @include respond-below(lg) {
+                    margin-right: rem(20px);
+                }
+        }
+        &-heading-wrap {
+            @include respond-below(lg) {
+                width: 100%;
+                justify-content: space-between;
             }
         }
         &-main-wrap {
@@ -34,6 +53,12 @@
         &-content {
             max-width: rem(773px);
             width: 100%;
+            @include respond-below(lg) {
+                max-width: rem(600px);   
+            }
+            @include respond-below(sm) {
+                max-width: 100%;   
+            }
         }
         &-content-desc {
             margin-bottom: rem(60px);
@@ -51,6 +76,9 @@
             border-bottom: 1px solid $color-200;
         }
         &-review {
+            @include respond-below(lg) {
+                margin-bottom: rem(34px);
+            }
             h3 {
                 font-weight: 700;
                 color: $secondary-100;
@@ -93,7 +121,10 @@
         }
         &-mobile-controls {
             display: none;
+           @include respond-below(lg) {
+            display: block;
             text-align: center;
-        }
-    }
+           }
+        }       
+    }   
 }

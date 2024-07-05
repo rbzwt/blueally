@@ -57,6 +57,9 @@
 				&:hover {
 					color: $secondary-100;
 				}
+				span {
+					font-size: 0;
+				}
 			}
 		}
 		&-btn {
@@ -181,7 +184,7 @@
 		top: 100%;
 		left: 0;
 		width: 100%;
-		padding: rem(20px) rem(10px);
+		padding: rem(20px) rem(20px);
 		background-color: $primary-200;
 		opacity: 0;
 		visibility: hidden;
@@ -191,12 +194,18 @@
 			opacity: 1;
 			visibility: visible;
 			pointer-events: all;		
+			@include respond-below(lg) {
+				display: none;
+			}
 		}
 		.search-wrap {
 			position: relative;
+			label {
+				font-size: 0;
+			}
 			button {
 				position: absolute;
-				top: 50%;
+				top: 70%;
 				right: rem(10px);
 				transform: translateY(-50%);
 				border: 0;
@@ -209,6 +218,9 @@
 				}
 				&::before {
 					display: block;
+				}
+				span {
+					font-size: 0;
 				}
 			}
 			i {
@@ -230,6 +242,7 @@
 				border-color: transparent;
 				border-radius: rem(5px);
 				background-color: $white;
+				color: $primary-100;
 				&::placeholder {
 					color: $black;
 				}

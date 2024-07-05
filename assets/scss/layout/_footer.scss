@@ -77,23 +77,33 @@
 		&-heading {
 			display: flex;
 			align-items: center;
-			i {
+			&::before {
 				font-size:rem(22px);
 				color: $white;
 				margin-right: rem(8px);
-				cursor: pointer;
+				display: block;
 				&:hover {
-					&::before {
-						color: $secondary-100;
-					}
-				}
-				&::before {
-					display: block;
+					color: $secondary-100;
 				}
 			}
+			// span {
+			// 	font-size:rem(22px);
+			// 	color: $white;
+			// 	margin-right: rem(8px);
+			// 	cursor: pointer;
+			// 	&:hover {
+			// 		&::before {
+			// 			color: $secondary-100;
+			// 		}
+			// 	}
+			// 	&::before {
+			// 		display: block;
+			// 	}
+			// }
 			li {
 				font-size: rem(18px);
 				font-weight: 500;
+				list-style-type: none;
 			}
 		}
 		&-logo-group {
@@ -124,14 +134,17 @@
 			}
 			.row {
 				justify-content: center;
+				// @include respond-below(md){
+				// 	@include row-space(0px);
+				// }
 			}
 		}
 		&-icon {
 			display: flex;
-			justify-content: center;
 			color: $white;
 			@include respond-below(md) {
 				margin-bottom: rem(20px);
+				justify-content: center;
 			}
 			i {
 				font-size: rem(20px);
@@ -156,6 +169,7 @@
 			}
 			@include respond-below(md) {
 				margin-bottom: rem(20px);
+				// padding: 0;
 			}
 		}
 		&-policy-link {

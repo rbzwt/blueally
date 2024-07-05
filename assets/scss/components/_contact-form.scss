@@ -1,0 +1,135 @@
+.contact-form {
+    background-color: $color-100;
+    padding: rem(70px) 0;
+    @include respond-below(md) {
+        padding: rem(40px) 0;
+    }
+
+    &::before {
+        background-color: $white;
+    }
+
+    .cf {
+        &-main {
+            margin-bottom: rem(16px);
+            p {
+                @include respond-below(md) {
+                    font-size: rem(16px);
+                }
+            }
+        }
+
+        &-list {
+            ul {
+                padding: 0;
+                li {
+                    position: relative;
+                    font-size: rem(18px);
+                    list-style-type: none;
+                    padding: 0;
+                    padding-left: rem(40px);
+                    margin-bottom: rem(20px);
+
+                    &::before {
+                        content: " ";
+                        position: absolute;
+                        top: rem(4px);
+                        left: 0;
+                        width: rem(19px);
+                        height: rem(19px);
+                        background-image: image("tick-icon.svg");
+                    }
+                }
+            }
+        }
+
+        &-form-control {
+            position: relative;
+            margin-bottom: rem(25px);
+            label {
+                content: " ";
+                position: absolute;
+                top: rem(25px);
+                left: rem(18px);
+                transform: translateY(-50%);
+                z-index: 1;
+                transition: 0.3s;
+            }
+            &.focused {
+                label {
+                    top: rem(10px);
+                    left: rem(15px);
+                    font-size: rem(10px);
+                    margin-bottom: rem(5px);
+                }
+            }
+            
+            input[type="text"] {
+                padding-top: rem(5px);
+            }
+        }
+        &-main-wrap {
+            max-width: rem(562px);
+            width: 100%;
+            @include respond-below(lg) {
+                max-width: 100%;
+            }
+        }
+    }
+    .form-submit {
+        border: 1px solid $white;
+    }
+    
+    .form-wrap {
+        position: relative;
+        padding: rem(53px) rem(45px);
+        border-radius: rem(15px);
+        overflow: hidden;       
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-57%);
+            width: rem(1164px);
+            height: rem(1096px);
+            object-fit: contain;
+            background-image: image("form-bg.png");
+            opacity: 0.27;
+            pointer-events: none;
+        }
+        @include respond-below(md) {
+            padding: rem(30px) rem(20px);
+        }
+        .mobile-link {
+            @include respond-below(md) {
+                text-align: center;
+                margin-top: rem(25px);
+            }
+        }
+        .reason {
+            font-size: 0;
+        }
+    }    
+    .checkbox-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkbox-link {
+        margin-top: -14px;
+        margin-left: 31px;
+
+        .privacy {
+            font-size: rem(11px);
+            color: $color-700;
+            font-weight: bold;
+        }
+    }
+    .row {        
+        @include row-space(0px);
+    }
+    .form-wrap-content {
+        @include row-space(16px);
+    }
+}

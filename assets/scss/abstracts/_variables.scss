@@ -24,6 +24,12 @@ $black:  #000000 !default;
 $gray:   #dee3e2 !default;
 $color-100:#CCCCD2 !default;
 $color-200:#031172 !default;
+$color-300:#909090 !default;
+$color-400:#D6D6DA !default;
+$color-500:#36BF78 !default;
+$color-600:#727272 !default;
+$color-700: #0092C8 !default;
+$color-800: #707070 !default;
 
 // Body color
 $body-bg:       $white !default;
@@ -49,7 +55,7 @@ $hgroup-color:        $primary-100 !default;
 $label-color:           rgba($white,0.7);
 $label-font-weight:     400;
 $label-font-family:     $font-family-base;
-$label-font-size:       rem(14px);
+$label-font-size:       rem(16px);
 
 $input-bg:                 $white;
 $input-font-family:        $font-family-base;
@@ -57,8 +63,8 @@ $input-font-size:          $font-size-base;
 $input-font-weight:        400;
 $input-color:              rgba($white,0.7);
 $input-color-placeholder:  rgba($white,0.6);
-$input-height-base:        rem(42px);
-$input-radius:             0;
+$input-height-base:        rem(50px);
+$input-radius:             rem(3px);
 $input-border-color:       $secondary-100;
 $input-border-color-focus: $secondary-100;
 $textarea-height-base:     rem(150px);

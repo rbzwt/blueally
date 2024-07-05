@@ -1,0 +1,95 @@
+.featured-partners {
+    background-color: $color-100;
+    padding: rem(65px) 0;
+    &.v-line {
+        &::before {
+            background-color: $white;
+        }
+    }
+    .fp {
+        &-top-link {
+            a {
+                @include respond-below(sm) {
+                    display: none;
+                }   
+            }
+            h2 {
+                @include respond-below(sm) {
+                    font-size: rem(18px);
+                }      
+            }
+        }
+        &-image {
+            position: relative;    
+
+            img {
+                width: 100%;
+                max-height: rem(74px);
+                object-fit: contain;
+                filter: grayscale(100%);
+                transition: 0.3s;
+                &:hover {
+                    filter: grayscale(0);
+                }
+            }
+        }
+        &-slider { 
+            overflow: hidden;                                                                                                     
+            .swiper-wrapper {
+                align-items: center;
+            }
+        }
+        &-h-main {
+            p{
+                @include respond-below(sm) {
+                    font-size: rem(14px);
+                }     
+            }
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: rem(120px);
+                background-color: $primary-100; 
+                @include respond-below(sm) {
+                    height: rem(100px);      
+                    background-color: $secondary-100; 
+                }
+            }
+        }
+        &-wrap {
+            @include respond-below(sm) {
+                flex-direction: column-reverse;
+            }
+        }
+        &-para {
+            @include respond-below(sm) {
+               margin-bottom: rem(25px); 
+            } 
+        }
+        &-fifty {
+            p {
+                @include respond-below(sm) {
+                    font-size: rem(14px);
+                }  
+            }
+        }
+    }
+    .swiper-container {
+        margin: rem(30px) 0 rem(67px);
+        @include respond-below(sm) {
+            margin: rem(20px) 0 rem(40px);  
+        }
+    }
+    .number {
+        font-size: rem(100px);
+        color: $primary-100;
+        line-height: 1;
+        @include respond-below(md) {
+            font-size: rem(39px);
+        }
+    }
+}

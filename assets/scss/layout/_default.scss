@@ -128,5 +128,16 @@ h5 {
 		background-color: transparent;
 		font-size: rem(28px);
 		color: $secondary-100;
+		transition: 0.3s;
+		&:hover {
+			color: $primary-100;
+		}
+		span {
+			font-size: 0;
+			display: block;
+		}
+	}
+	.custom-dt {
+		width: auto;
 	}
 }
